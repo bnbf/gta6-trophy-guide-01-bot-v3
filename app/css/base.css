@@ -1,0 +1,235 @@
+:root {
+  --bg: #0b0b14;
+  --panel: #141428;
+  --panel-2: #1b1b33;
+  --line: #2a2a4a;
+  --ink: #f2f0ff;
+  --muted: #a9a7c9;
+  --pink: #ff2e88;
+  --teal: #19e3d0;
+  --gold: #ffc93c;
+  --silver: #c9d1e3;
+  --bronze: #e0955a;
+  --plat: #b8f1ff;
+  --warn: #ffb02e;
+  --danger: #ff5a5a;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--teal); }
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: end;
+  justify-content: space-between;
+  padding: 28px 24px 18px;
+  background: linear-gradient(135deg, #1a0b2e 0%, #0b0b14 55%, #062a2a 100%);
+  border-bottom: 3px solid var(--pink);
+}
+.brand h1 {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.brand h1 span { color: var(--pink); }
+.tag { margin: 8px 0 0; color: var(--muted); max-width: 560px; }
+.progress { min-width: 260px; flex: 1; max-width: 420px; }
+.progress .bar {
+  height: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress .fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--pink), var(--gold));
+  transition: width .3s ease;
+}
+.progress p { margin: 6px 0 0; color: var(--muted); }
+.tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.tab {
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+}
+.tab.active { background: var(--pink); border-color: var(--pink); color: #fff; }
+.pill {
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--warn);
+  color: #201400;
+  font-size: 12px;
+  font-weight: 700;
+}
+main { max-width: 1060px; margin: 0 auto; padding: 20px 24px 32px; }
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.controls input[type="search"] {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 15px;
+}
+.controls select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+}
+.chip {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 14px;
+}
+.chip[aria-pressed="true"] { background: var(--teal); color: #03211d; border-color: var(--teal); }
+.check { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 14px; }
+.btn {
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn:hover { border-color: var(--teal); }
+.nextup {
+  border: 1px solid var(--gold);
+  background: linear-gradient(180deg, #241d08, var(--panel));
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.nextup h2 { margin: 0 0 6px; font-size: 18px; color: var(--gold); }
+.nextup ol { margin: 0; padding-left: 20px; }
+.nextup li { margin: 2px 0; }
+.trophy {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.trophy.earned { border-color: var(--teal); }
+.trophy .row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.trophy input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--teal); flex: none; }
+.trophy .body { flex: 1; min-width: 0; }
+.trophy h3 { margin: 0 0 2px; font-size: 17px; }
+.trophy h3 .grade {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.grade.platinum { background: var(--plat); color: #06303c; }
+.grade.gold { background: var(--gold); color: #2a1d00; }
+.grade.silver { background: var(--silver); color: #1c2333; }
+.grade.bronze { background: var(--bronze); color: #2a1503; }
+.trophy .desc { margin: 2px 0 6px; color: var(--muted); }
+.trophy .guide { margin: 6px 0 0; font-size: 15px; }
+.meta { margin: 8px 0 0; font-size: 13px; color: var(--muted); display: inline-flex; gap: 12px; flex-wrap: wrap; }
+.missable-flag { color: var(--warn); font-weight: 700; }
+.trophy details { margin-top: 8px; }
+.trophy summary { cursor: pointer; color: var(--teal); font-size: 14px; }
+.trophy textarea {
+  width: 100%;
+  min-height: 56px;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+.masked { color: var(--muted); font-style: italic; }
+.stage, .miss-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.stage h2, .miss-card h2 { margin: 0 0 6px; font-size: 19px; }
+.stage h2 .n {
+  display: inline-block;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; border-radius: 50%;
+  background: var(--pink); color: #fff;
+  margin-right: 8px; font-size: 15px;
+}
+.stage ul, .miss-card ul { margin: 8px 0 0; padding-left: 20px; }
+.stage .done { color: var(--teal); }
+.warnbox {
+  border: 1px solid var(--warn);
+  background: #241d08;
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+.warnbox p { margin: 4px 0; }
+.empty { color: var(--muted); padding: 24px 0; text-align: center; }
+.sources {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 24px 32px;
+  color: var(--muted);
+  font-size: 13px;
+  border-top: 1px solid var(--line);
+}
+.sources p { margin: 10px 0 0; }
+@media (max-width: 640px) {
+  .brand h1 { font-size: 30px; }
+  main, .tabs { padding-left: 14px; padding-right: 14px; }
+}
